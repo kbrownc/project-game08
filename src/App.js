@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import Navbar from './Navbar';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+  const [games, setGames] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/games')
+      .then(res => {
+        if (!res.ok) {
+          throw Error('could not fetch data for api/games');
+        }
+        return res.json();
+      })
+      .then(games => {
+        setGames(games);
+        setError(null);
+      })
+      .catch(err => {
+        setError(err.message);
+      });
+  }, [games]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          {error && <div>{error}</div>}
+          <Routes>
+            <Route exact path="/" element={<Home games={games} />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
