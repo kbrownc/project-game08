@@ -37,8 +37,8 @@
   padding: 20px;
 }
 .game-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
+  padding: 5px 5px;
+  margin: 5px 0;
   border-bottom: 1px solid #fafafa;
 }
 .game-preview:hover {
@@ -47,13 +47,17 @@
 .game-preview h2 {
   font-size: 20px;
   color: #f1356d;
-  margin-bottom: 8px;
+  margin-bottom: 1px;
+}
+.game-preview p{
+  text-decoration: none;
+  color: blue;
 }
 .game-preview a{
   text-decoration: none;
 }
 
-/* blog details page */
+/* game details page */
 .game-details h2 {
   font-size: 20px;
   color: #f1356d;
@@ -71,7 +75,7 @@
   cursor: pointer;
 }
 
-/* create new blog form */
+/* create new game form */
 .create {
   max-width: 400px;
   margin: 0 auto;
