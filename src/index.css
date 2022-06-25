@@ -7,7 +7,7 @@
   color: #333;
 }
 .navbar {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   max-width: 600px;
@@ -33,8 +33,8 @@
 }
 .content {
   max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 10px;
 }
 .game-preview {
   padding: 5px 5px;
