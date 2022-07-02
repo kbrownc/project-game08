@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
+import About from './About';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           {error && <div>{error}</div>}
           <Routes>
             <Route exact path="/" element={<Home games={games} />} />
+            <Route exact path="/About" element={<About />} />
           </Routes>
         </div>
       </div>

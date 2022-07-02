@@ -6,7 +6,6 @@ const Home = ({ games }) => {
         {games.map(game => (
           <div className="game-preview" key={game._id}>
             <a href={game.url}>{game.gameName}</a><span> ({game.type})</span>
-            <p>Created: {game.published}</p>
             <p>{game.note}</p>
           </div>
         ))}
