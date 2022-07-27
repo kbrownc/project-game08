@@ -23,7 +23,7 @@ function App() {
       .catch(err => {
         setError(err.message);
       });
-  }, [games]);
+  }, []);
 
   return (
     <Router>
