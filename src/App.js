@@ -9,7 +9,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://server-game07.herokuapp.com/api/games')
+    fetch('https://server-game07.onrender.com/api/games')
       .then(res => {
         if (!res.ok) {
           throw Error('could not fetch data for api/games');
